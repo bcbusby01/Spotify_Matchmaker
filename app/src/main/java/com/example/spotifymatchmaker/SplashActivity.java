@@ -14,6 +14,8 @@ import com.spotify.sdk.android.authentication.AuthenticationClient;
 import com.spotify.sdk.android.authentication.AuthenticationRequest;
 import com.spotify.sdk.android.authentication.AuthenticationResponse;
 
+import Connectors.UserService;
+
 public class SplashActivity extends AppCompatActivity {
 
     private SharedPreferences.Editor editor;
@@ -65,7 +67,7 @@ public class SplashActivity extends AppCompatActivity {
                     editor.putString("token", response.getAccessToken());
                     Log.d("STARTING", "GOT AUTH TOKEN");
                     editor.apply();
-                    //waitForUserInfo();
+                    waitForUserInfo();
                     break;
 
                 // Auth flow returned an error
@@ -80,6 +82,23 @@ public class SplashActivity extends AppCompatActivity {
         }
     }
 
+    private void waitForUserInfo() {
+        UserService userService = new UserService(queue, msharedPreferences);
+        userService.get(() -> {
+            User user = userService.getUser();
+            editor = getSharedPreferences("SPOTIFY", 0).edit();
+            editor.putString("userid", user.id);
+            Log.d("STARTING", "GOT USER INFORMATION");
+            // We use commit instead of apply because we need the information stored immediately
+            editor.commit();
+            startMainActivity();
+        });
+    }
+
+    private void startMainActivity() {
+        Intent newintent = new Intent(SplashActivity.this, MainActivity.class);
+        startActivity(newintent);
+    }
 
 
 }
