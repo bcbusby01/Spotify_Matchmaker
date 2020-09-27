@@ -26,23 +26,15 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         songService = new SongService(getApplicationContext());
-        userView = (TextView) findViewById(R.id.user);
-        songView = (TextView) findViewById(R.id.song);
+        //userView = (TextView) findViewById(R.id.user);
+        //songView = (TextView) findViewById(R.id.song);
         addBtn = (Button) findViewById(R.id.add);
 
         SharedPreferences sharedPreferences = this.getSharedPreferences("SPOTIFY", 0);
-        userView.setText(sharedPreferences.getString("userid", "No User"));
+        //userView.setText(sharedPreferences.getString("userid", "No User"));
 
         getTracks();
     }
-
-    private View.OnClickListener addListener = v -> {
-        songService.addSongToLibrary(this.song);
-        if (recentlyPlayedTracks.size() > 0) {
-            recentlyPlayedTracks.remove(0);
-        }
-        updateSong();
-    };
 
 
     private void getTracks() {
@@ -54,10 +46,9 @@ public class MainActivity extends AppCompatActivity {
 
     private void updateSong() {
         if (recentlyPlayedTracks.size() > 0) {
-            songView.setText(recentlyPlayedTracks.get(0).getName());
+            //songView.setText(recentlyPlayedTracks.get(0).getName());
             song = recentlyPlayedTracks.get(0);
         }
     }
-
 
 }
