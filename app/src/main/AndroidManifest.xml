@@ -16,6 +16,15 @@
             </intent-filter>
         </activity>
         <activity android:name=".MainActivity"></activity>
+        <activity android:name=".Instr"></activity>
+        <activity android:name=".SongS"></activity>
+
+        <activity android:name=".Rock"></activity>
+        <activity android:name=".Pop"></activity>
+        <activity android:name=".Kpop"></activity>
+        <activity android:name=".Rnb"></activity>
+        <activity android:name=".Rap"></activity>
+
 
     </application>
 

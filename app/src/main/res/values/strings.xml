@@ -4,4 +4,19 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="get_started">Get Started</string>
+    <string name="almost_there">Almost There!</string>
+    <string name="instructiones">Choose a genre of music to discover an up-and-coming artist</string>
+    <string name="melody">Melody.</string>
+    <string name="resultslisten">Listen to...</string>
+    <string name="chicken"><u>Select a genre.</u></string>
+
+    <string-array name="music_genres">
+        <item>Rock</item>
+        <item>Pop</item>
+        <item>RnB / Indie</item>
+        <item>Kpop</item>
+        <item>Rap</item>
+
+
+    </string-array>
 </resources>

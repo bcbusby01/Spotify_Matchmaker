@@ -7,8 +7,15 @@
     tools:context=".MainActivity">
 
 
-
-
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="540dp"
+        android:layout_height="809dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/blankbg" />
 
     <Button
         android:id="@+id/add"
@@ -16,8 +23,11 @@
         android:layout_height="88dp"
         android:layout_marginEnd="8dp"
         android:background="@color/buttonColor"
+        android:fontFamily="sans-serif"
         android:text="@string/get_started"
+        android:textColor="@android:color/white"
         android:textSize="25sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -25,13 +35,28 @@
         app:layout_constraintVertical_bias="0.89" />
 
     <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="758dp"
-        android:layout_height="754dp"
+        android:id="@+id/imageView5"
+        android:layout_width="267dp"
+        android:layout_height="320dp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.54"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/invislogo" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/melody"
+        android:textSize="50sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.727"
-        app:srcCompat="@drawable/welcomebackground" />
+        app:layout_constraintVertical_bias="0.49" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
